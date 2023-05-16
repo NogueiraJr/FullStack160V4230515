@@ -1,0 +1,16 @@
+{
+  "name": "full-stack160-v4230515",
+  "version": "0.0.0",
+  "description": "FullStack160V4230515",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {},
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
