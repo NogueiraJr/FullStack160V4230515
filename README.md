@@ -4,6 +4,10 @@ Projeto simples para exibir a Previsão do Tempo obtida de uma API da Web.
 
 ![20230516 192553](https://github.com/NogueiraJr/FullStack160V4230515/assets/16601623/534d8171-ad27-45eb-9566-cc2ba55f6ad7)
 
+![20230516 193042](https://github.com/NogueiraJr/FullStack160V4230515/assets/16601623/4af1fafa-dfde-4bed-ba7e-b048b6b34859)
+
+![20230516 193053](https://github.com/NogueiraJr/FullStack160V4230515/assets/16601623/8e23b0ac-58fa-4f2a-94f7-b69becf84523)
+
 ![20230516 192655](https://github.com/NogueiraJr/FullStack160V4230515/assets/16601623/8c104b78-a0ed-42dc-8b76-472d790c8e11)
 
 ![20230516 192747](https://github.com/NogueiraJr/FullStack160V4230515/assets/16601623/6745b22c-9fdb-4222-b4c3-501e8dcd791f)
