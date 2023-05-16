@@ -1,0 +1,2 @@
+D:\Projects\Lab\FullStack160V4230515\client\FullStack160V4230515client\obj\Debug\fullstack160v4230515client.esproj.SuggestedBindingRedirects.cache
+D:\Projects\Lab\FullStack160V4230515\client\FullStack160V4230515client\obj\Debug\fullstack160v4230515client.esproj.CoreCompileInputs.cache
