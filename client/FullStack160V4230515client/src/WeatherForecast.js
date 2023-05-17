@@ -48,6 +48,34 @@ const WeatherForecast = () => {
         return <div>Erro: {data.error}</div>;
     }
 
+    const tableStyle = {
+        borderCollapse: 'collapse',
+        width: '100%',
+    };
+
+    const tableHeaderStyle = {
+        backgroundColor: '#f2f2f2',
+        fontWeight: 'bold',
+        borderBottom: '1px solid #ddd',
+        borderRight: '1px solid #ddd',
+        padding: '8px',
+        textAlign: 'center',
+    };
+
+    const tableRowStyle = {
+        borderBottom: '1px solid #ddd',
+    };
+
+    const tableCellStyle = {
+        padding: '8px',
+        borderRight: '1px solid #ddd',
+        textAlign: 'center',
+    };
+
+    const divStyle = { fontSize: '20px', marginBottom: '10px' };
+    const labelStyle = { marginRight: '10px' };
+    const inputStyle = { marginRight: '10px' };
+
     const renderGeocodingData = () => {
         const { geocodingData } = data;
 
@@ -76,63 +104,39 @@ const WeatherForecast = () => {
         );
     };
 
-    const tableStyle = {
-        borderCollapse: 'collapse',
-        width: '100%',
-    };
-
-    const tableHeaderStyle = {
-        backgroundColor: '#f2f2f2',
-        fontWeight: 'bold',
-        borderBottom: '1px solid #ddd',
-        borderRight: '1px solid #ddd',
-        padding: '8px',
-        textAlign: 'center',
-    };
-
-    const tableRowStyle = {
-        borderBottom: '1px solid #ddd',
-    };
-
-    const tableCellStyle = {
-        padding: '8px',
-        borderRight: '1px solid #ddd',
-        textAlign: 'center',
-    };
-
     const renderWeatherForecast = () => {
         const { weatherForecast } = data;
         return (
             <div>
                 <h2>Previsão do tempo do local consultado:</h2>
-                <table style={{ border: '1px solid black', borderCollapse: 'collapse', width: '100%' }}>
+                <table style={tableStyle}>
                     <thead>
-                        <tr style={{ border: '1px solid black' }}>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Latitude</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Longitude</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Fuso horário</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Elevação</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Temperatura</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Velocidade do vento</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Direção do vento</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>É dia</th>
-                            <th style={{ border: '1px solid black', textAlign: 'center' }}>Quando</th>
+                        <tr style={tableRowStyle}>
+                            <th style={tableHeaderStyle}>Latitude</th>
+                            <th style={tableHeaderStyle}>Longitude</th>
+                            <th style={tableHeaderStyle}>Fuso horário</th>
+                            <th style={tableHeaderStyle}>Elevação</th>
+                            <th style={tableHeaderStyle}>Temperatura</th>
+                            <th style={tableHeaderStyle}>Velocidade do vento</th>
+                            <th style={tableHeaderStyle}>Direção do vento</th>
+                            <th style={tableHeaderStyle}>É dia</th>
+                            <th style={tableHeaderStyle}>Quando</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style={{ border: '1px solid black' }}>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{Number(weatherForecast.latitude).toFixed(7)}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{Number(weatherForecast.longitude).toFixed(7)}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{weatherForecast.timezone}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{weatherForecast.elevation}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{weatherForecast.current_weather.temperature}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>{weatherForecast.current_weather.windspeed}</td>
-                            <td style = {{ border: '1px solid black', textAlign: 'center' }}>{weatherForecast.current_weather.winddirection}</td>
-                            <td style={{ border: '1px solid black', textAlign: 'center' }}>
+                        <tr style={tableRowStyle}>
+                            <td style={tableCellStyle}>{Number(weatherForecast.latitude).toFixed(7)}</td>
+                            <td style={tableCellStyle}>{Number(weatherForecast.longitude).toFixed(7)}</td>
+                            <td style={tableCellStyle}>{weatherForecast.timezone}</td>
+                            <td style={tableCellStyle}>{weatherForecast.elevation}</td>
+                            <td style={tableCellStyle}>{weatherForecast.current_weather.temperature}</td>
+                            <td style={tableCellStyle}>{weatherForecast.current_weather.windspeed}</td>
+                            <td style={tableCellStyle}>{weatherForecast.current_weather.winddirection}</td>
+                            <td style={tableCellStyle}>
                                 {weatherForecast.current_weather.is_day === 1 ? 'Sim' : 'Não'}
                             </td>
 
-                        <td style={{ border: '1px solid black', textAlign: 'center' }}>
+                            <td style={tableCellStyle}>
                             {format(new Date(weatherForecast.current_weather.time), 'dd/MM/yyyy HH:mm:ss')}
                         </td>
                     </tr>
@@ -144,9 +148,9 @@ const WeatherForecast = () => {
 
 return (
     <div>
-        <div style={{ fontSize: '20px', marginBottom: '10px' }}>
-            <label htmlFor="address" style={{ marginRight: '10px' }}>Localidade:</label>
-            <input type="text" id="address" value={address} onChange={handleAddressChange} style={{ marginRight: '10px' }} />
+        <div style={divStyle}>
+            <label htmlFor="address" style={labelStyle}>Localidade:</label>
+            <input type="text" id="address" value={address} onChange={handleAddressChange} style={inputStyle} />
             <button onClick={handleConsultar}>Consultar</button>
         </div>
         {renderGeocodingData()}
